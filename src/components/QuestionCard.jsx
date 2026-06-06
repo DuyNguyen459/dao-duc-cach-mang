@@ -90,7 +90,7 @@ const QuestionCard = ({
           />
         </div>
 
-        <div className="question-text">Câu {currentQuestion + 1}: {question.q}</div>
+        <div className="question-text">{question.q}</div>
 
         <div className="options-grid">
           {question.opts.map((opt, index) => {

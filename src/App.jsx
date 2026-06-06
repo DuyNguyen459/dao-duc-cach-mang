@@ -84,9 +84,6 @@ function App() {
     <>
       <header>
         <h1>⚔ KỶ NGUYÊN VƯƠN MÌNH ⚔</h1>
-        <div className="subtitle">
-          Câu {currentQuestion + 1} / {TOTAL}
-        </div>
       </header>
 
       <QuestionCard
