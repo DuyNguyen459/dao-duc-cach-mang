@@ -52,7 +52,7 @@ const CircleTimer = ({ timeLeft, isTimerRunning, onClick }) => {
           textAnchor="middle"
           fill={done ? '#555' : strokeColor}
           fontSize="22"
-          fontFamily="'Cinzel', serif"
+          fontFamily="'Be Vietnam Pro', sans-serif"
           fontWeight="700"
           style={{ filter: done ? 'none' : `drop-shadow(0 0 4px ${strokeColor})` }}
         >
@@ -75,6 +75,8 @@ const QuestionCard = ({
   onNext,
   onReveal,
   isLast,
+  selectedAnswer,
+  onSelectAnswer,
 }) => {
   return (
     <div className="main-content">
@@ -91,15 +93,30 @@ const QuestionCard = ({
         <div className="question-text">Câu {currentQuestion + 1}: {question.q}</div>
 
         <div className="options-grid">
-          {question.opts.map((opt, index) => (
-            <div
-              key={index}
-              className={`option ${showAnswer && index === question.ans ? 'correct' : ''}`}
-            >
-              <span className="option-letter">{labels[index]}.</span>
-              <span>{opt}</span>
-            </div>
-          ))}
+          {question.opts.map((opt, index) => {
+            let optionClass = 'option';
+            if (showAnswer) {
+              if (index === question.ans) {
+                optionClass += ' correct';
+              } else if (selectedAnswer === index) {
+                optionClass += ' incorrect';
+              }
+            } else if (selectedAnswer === index) {
+              optionClass += ' selected';
+            }
+
+            return (
+              <div
+                key={index}
+                className={optionClass}
+                onClick={() => !showAnswer && onSelectAnswer(index)}
+                style={{ cursor: showAnswer ? 'default' : 'pointer' }}
+              >
+                <span className="option-letter">{labels[index]}.</span>
+                <span>{opt}</span>
+              </div>
+            );
+          })}
         </div>
 
         <div className="controls">

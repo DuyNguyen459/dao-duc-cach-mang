@@ -89,7 +89,7 @@ header::after {
 
 h1 {
   margin: 0;
-  font-family: 'Cinzel', serif;
+  font-family: 'Playfair Display', serif;
   font-size: 2.8rem;
   font-weight: 900;
   letter-spacing: 3px;
@@ -273,6 +273,33 @@ h1 {
 }
 
 .option.correct .option-letter {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.option.selected {
+  border-color: var(--crimson);
+  background: rgba(193, 18, 47, 0.04);
+  box-shadow: 0 10px 20px rgba(193, 18, 47, 0.1);
+  transform: translateY(-2px);
+}
+
+.option.selected .option-letter {
+  background: var(--crimson);
+  color: #fff;
+  border-color: transparent;
+}
+
+.option.incorrect {
+  background: linear-gradient(120deg, #c1122f, #e03050);
+  color: #fff;
+  border-color: transparent;
+  transform: translateY(-2px);
+  box-shadow: 0 16px 30px rgba(193, 18, 47, 0.35);
+}
+
+.option.incorrect .option-letter {
   color: #fff;
   background: rgba(255, 255, 255, 0.18);
   border-color: rgba(255, 255, 255, 0.3);
@@ -597,7 +624,7 @@ button {
 /* Title */
 .start-title {
   margin: 0 0 10px;
-  font-family: 'Cinzel', serif;
+  font-family: 'Playfair Display', serif;
   font-size: 3.4rem;
   font-weight: 900;
   letter-spacing: 5px;
@@ -647,7 +674,7 @@ button {
 .start-info-item { flex: 1; }
 
 .start-info-val {
-  font-family: 'Cinzel', serif;
+  font-family: 'Playfair Display', serif;
   font-size: 2rem;
   font-weight: 700;
   color: var(--crimson);
@@ -702,7 +729,7 @@ button {
 
 /* CTA button */
 .btn-start {
-  font-family: 'Cinzel', serif;
+  font-family: 'Playfair Display', serif;
   font-size: 1.1rem;
   font-weight: 700;
   letter-spacing: 3px;
@@ -997,7 +1024,7 @@ button {
 
 /* Restart button */
 .btn-restart {
-  font-family: 'Cinzel', serif;
+  font-family: 'Playfair Display', serif;
   font-size: 1rem;
   font-weight: 700;
   letter-spacing: 2px;
@@ -1046,4 +1073,36 @@ button {
   .hof-title { font-size: 1.6rem; }
   .hof-podium-slot { min-width: 88px; }
   .hof-team-pts { font-size: 1.6rem; }
+}
+
+/* =====================================================
+   WEREWOLF REVOLUTION GAME ADDITIONS
+   ===================================================== */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+.setup-card-hover {
+  transition: all 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.setup-card-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 24px rgba(111, 15, 30, 0.14) !important;
+  border-color: var(--crimson) !important;
+}
+
+.option-hover-modal {
+  transition: all 0.18s ease;
+}
+.option-hover-modal:hover {
+  transform: translateY(-2px);
+  border-color: var(--crimson) !important;
+  background: rgba(193, 18, 47, 0.04) !important;
+}
+
+/* Custom timer pulse */
+@keyframes timer-pulse {
+  0%, 100% { transform: scale(1); box-shadow: 0 0 10px rgba(224, 48, 80, 0.3); }
+  50%       { transform: scale(1.08); box-shadow: 0 0 20px rgba(224, 48, 80, 0.6); }
 }
