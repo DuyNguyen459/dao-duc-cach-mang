@@ -23,26 +23,11 @@ const StartScreen = ({ onStart }) => {
 
         {/* Title */}
         <h1 className="start-title">KỶ NGUYÊN<br />VƯƠN MÌNH</h1>
-        <p className="start-tagline">HỘI THI TÌM HIỂU ĐẠO ĐỨC CÁCH MẠNG & KỶ LUẬT THÉP</p>
-
         {/* Divider */}
-        <div className="start-divider">
+        <div className="start-divider" style={{ marginBottom: '32px' }}>
           <span />
           <span className="start-divider-icon">⚜</span>
           <span />
-        </div>
-
-        {/* Info */}
-        <div className="start-info-row" style={{ maxWidth: '360px', margin: '0 auto 28px' }}>
-          <div className="start-info-item">
-            <div className="start-info-val">30</div>
-            <div className="start-info-lbl">Câu hỏi</div>
-          </div>
-          <div className="start-info-sep" />
-          <div className="start-info-item">
-            <div className="start-info-val">20s</div>
-            <div className="start-info-lbl">Mỗi câu</div>
-          </div>
         </div>
 
         {/* CTA */}
